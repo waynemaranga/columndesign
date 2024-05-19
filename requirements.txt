@@ -1,3 +1,7 @@
 handcalcs
 pandas
 forallpeople
+# manim
+# manimlib
+coverage
+pytest
