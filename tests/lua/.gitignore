@@ -1,0 +1,6 @@
+*.lua
+*.md
+*.sh
+
+!sql.lua
+!mock.lua
