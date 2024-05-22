@@ -79,7 +79,7 @@ class TestUniversalColumn(unittest.TestCase):
 
 class TestSectionList(unittest.TestCase):
     def test_section_list(self):
-        uc1 = UniversalColumn("UC203x203x60")
+        uc1 = UniversalColumn("UC203x203x60")  # try implement for each section?
         uc2 = UniversalColumn("UC203x203x46")
         section_list = SectionList([uc1, uc2])
 

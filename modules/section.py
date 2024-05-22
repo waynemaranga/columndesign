@@ -2,7 +2,9 @@ import pandas as pd
 import os
 
 uc_json = os.path.join(os.getcwd() + "/db/uc_bs5950.json")
+ub_json = os.path.join(os.getcwd() + "/db/ub_bs4.json.json")
 uc_df = pd.read_json(uc_json, orient="index")
+ub_df = pd.read_json(ub_json, orient="index")
 
 
 class UniversalColumn:
@@ -49,6 +51,52 @@ class UniversalColumn:
     def create(designation):
         """Create column section by section designation"""
         return UniversalColumn(designation)
+
+
+class UniversalBeam:
+    def __init__(self, designation):
+        data = ub_df.loc[designation]
+
+        (
+            self.designation,
+            self.serial_size,
+            self.additional,
+            self.mass_per_metre,
+            self.D,
+            self.B,
+            self.t,
+            self.T,
+            self.r,
+            self.d,
+            self.d_t,
+            self.b_T,
+            self.C,
+            self.N,
+            self.n,
+            self.SA_m,
+            self.SA_t,
+            self.I_xx,
+            self.I_yy,
+            self.r_xx,
+            self.r_yy,
+            self.Z_xx,
+            self.Z_yy,
+            self.S_xx,
+            self.S_yy,
+            self.u,
+            self.x,
+            self.H,
+            self.J,
+            self.A,
+        ) = data
+
+    def __str__(self) -> str:
+        return f"{self.designation}"
+
+    @staticmethod
+    def create(designation):
+        """Create column section by section designation"""
+        return UniversalBeam(designation)
 
 
 class SectionList:
