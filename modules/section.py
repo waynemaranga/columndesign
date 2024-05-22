@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 uc_json = os.path.join(os.getcwd() + "/db/uc_bs5950.json")
-ub_json = os.path.join(os.getcwd() + "/db/ub_bs4.json.json")
+ub_json = os.path.join(os.getcwd() + "/db/ub_bs4.json")
 uc_df = pd.read_json(uc_json, orient="index")
 ub_df = pd.read_json(ub_json, orient="index")
 
